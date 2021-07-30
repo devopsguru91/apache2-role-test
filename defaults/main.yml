@@ -1,0 +1,12 @@
+---
+# defaults file for apache
+
+doc_root: /var/www/example
+
+name: Ashutosh
+age: 34
+city: Pune
+state: Maharashtra
+edu: MCA
+email: devopsguru91@gmail.com
+

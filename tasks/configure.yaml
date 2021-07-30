@@ -1,0 +1,12 @@
+---
+- name: Crerate Custom Root Directory
+  file: name={{ doc_root }} state=directory owner=www-data group=www-data
+
+- name: Copy Custome Index File to Server
+  template: src=index.html.j2 dest={{ doc_root }}/index.html owner=www-data group=www-data mode=0644
+
+- name: Create Custome Directory Configuration
+  template: src=000-default.conf.j2 dest=/etc/apache2/sites-available/000-default.conf
+  notify:
+      - Restart Apache Web Sever
+
